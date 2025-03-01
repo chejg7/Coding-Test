@@ -16,12 +16,20 @@
 import re    
 
 def solution(babbling):
-    pattern = re.compile(r"^(aya|ye|woo|ma)+$")
-    invalid_pattern = re.compile(r"(ayaaya|yeye|woowoo|mama)")
-    answer = 0
+#     pattern = re.compile(r"^(aya|ye|woo|ma)+$")
+#     invalid_pattern = re.compile(r"(ayaaya|yeye|woowoo|mama)")
+#     answer = 0
 
-    for word in babbling:
-        if pattern.fullmatch(word) and not invalid_pattern.search(word):
+#     for word in babbling:
+#         if pattern.fullmatch(word) and not invalid_pattern.search(word):
+#             answer += 1
+    
+    answer = 0
+    for b in babbling:
+        for w in [ "aya", "ye", "woo", "ma" ]:
+            if w * 2 not in b:
+                b = b.replace(w, " ") # 단순히 지워버리면 중간에 들어간 부분이 지워진 다음 이어진 단어가 4단어에 포함되는 경우 제대로 걸러내지 못하는 경우가 생길 수 있음
+        if len(b.strip()) == 0:
             answer += 1
-            
+    
     return answer
