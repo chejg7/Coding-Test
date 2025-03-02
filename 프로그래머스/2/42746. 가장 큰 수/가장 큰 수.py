@@ -15,5 +15,7 @@
 
 def solution(numbers):
     numbers = sorted(numbers, key = lambda x : (str(x) * 4)[:4], reverse = True)
+    # answer = ''.join(map(str, numbers))
+    # 위의 방식으로 할 경우 0000을 0으로 표시해야 하는 경우를 걸러낼 수 없음
     answer = str(int(''.join(map(str, numbers))))
     return answer
