@@ -39,3 +39,7 @@ def solution(park, routes):
         i, j = ni, nj
 
     return [i, j]
+
+# dx = {'N':-1, 'S':1, 'E':0, 'W': 0}
+# dy = {'N': 0, 'S':0, 'E':1, 'W':-1}
+# 이러한 방식으로 각 상황별 더하는 값을 보다 간단하게 표시할 수 있음. 
