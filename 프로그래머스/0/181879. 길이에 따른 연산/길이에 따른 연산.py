@@ -9,3 +9,6 @@ def solution(num_list):
             res2 *= num
         return res2
     
+    # return sum(num_list) if len(num_list) > 10 else prod(num_list)
+
+    
